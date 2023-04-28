@@ -23,7 +23,7 @@ public class Main {
         System.out.println(customListOfStrings.size());
         customListOfStrings.add(3, "Iza");
         System.out.println(customListOfStrings);
-        customListOfStrings.remove(0);
+        customListOfStrings.remove(5);
         System.out.println(customListOfStrings);
 
         customListOfIntegers.add(1);

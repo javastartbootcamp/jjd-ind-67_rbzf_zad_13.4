@@ -33,6 +33,8 @@ public class CustomList<T> {
             size++;
         } else if (index == size) {
             add(element);
+        } else {
+            throw new ArrayIndexOutOfBoundsException("niewlasciwy index elementu");
         }
     }
 
@@ -49,9 +51,13 @@ public class CustomList<T> {
     }
 
     public void remove(int index) {
-        int numberOfElementsToBeCopied = elements.length - (index + 1);
-        System.arraycopy(elements, index + 1, elements, index, numberOfElementsToBeCopied);
-        size--;
+        if (index >= 0 && index < size) {
+            int numberOfElementsToBeCopied = elements.length - (index + 1);
+            System.arraycopy(elements, index + 1, elements, index, numberOfElementsToBeCopied);
+            size--;
+        } else {
+            throw new ArrayIndexOutOfBoundsException("niewlasciwy index elementu");
+        }
     }
 
     private void ensureCapacity() {
